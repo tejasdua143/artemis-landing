@@ -984,6 +984,11 @@ button { font-family: inherit; cursor: pointer; border: none; }
   background: none;
 }
 
+.setup-cta {
+  text-align: center;
+  margin-top: 56px;
+}
+
 /* ─── DEMO SECTION ─── */
 .demo-card {
   background: var(--bg-card);
