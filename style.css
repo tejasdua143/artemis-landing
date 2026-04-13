@@ -177,6 +177,20 @@ button { font-family: inherit; cursor: pointer; border: none; }
   border-radius: var(--radius);
 }
 
+.logo-img {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  display: inline-block;
+}
+
+.logo-img--xl {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius);
+}
+
 .navbar__links {
   display: flex;
   gap: var(--sp-8);
@@ -1172,14 +1186,72 @@ button { font-family: inherit; cursor: pointer; border: none; }
   font-weight: 300;
 }
 
+/* ─── EXCLUSIVE PARTNERS ─── */
+.partners-strip {
+  padding: 40px 0;
+}
+
+.partners-strip__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.partners-strip__label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.partners-strip__items {
+  display: flex;
+  gap: 24px;
+}
+
+.partner-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 20px;
+}
+
+.partner-item__logo {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-xs);
+  object-fit: cover;
+}
+
+.partner-item__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.partner-item__info strong {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.partner-item__info span {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
 /* ─── INSTALL CTA ─── */
 .install-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   background: var(--primary);
   border-radius: 20px;
   overflow: hidden;
-  min-height: 440px;
   color: #fff;
 }
 
@@ -1187,7 +1259,8 @@ button { font-family: inherit; cursor: pointer; border: none; }
   padding: 64px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .install-card__content h2 {
@@ -1210,9 +1283,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
 
 .install-steps-mini {
   display: flex;
-  flex-direction: column;
-  gap: var(--sp-3);
+  gap: var(--sp-6);
   margin-bottom: var(--sp-8);
+  justify-content: center;
 }
 
 .mini-step {
@@ -1274,9 +1347,12 @@ button { font-family: inherit; cursor: pointer; border: none; }
   color: #fff;
 }
 
-.install-logo .logo-icon--xl {
-  background: rgba(255,255,255,.1);
-  border: 1px solid rgba(255,255,255,.15);
+.install-logo .logo-img--xl {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: none;
+  border: none;
 }
 
 /* ─── FOOTER ─── */
