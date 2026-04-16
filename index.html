@@ -7,28 +7,48 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&family=PT+Mono&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ─── NAVBAR ─── -->
-  <nav class="navbar">
-    <div class="container navbar__inner">
-      <a href="#" class="navbar__logo">
-        <img src="assets/logo-artemis.png" alt="Artemis" class="logo-img" /> Artemis
-      </a>
-      <ul class="navbar__links">
-        <li><a href="#features">Features</a></li>
-        <li><a href="#setup">Setup</a></li>
-        <li><a href="#demo">Demo</a></li>
-        <li><a href="#metrics">Metrics</a></li>
-      </ul>
-      <a href="#install" class="btn btn--primary btn--sm">Add to Discord</a>
-      <button class="navbar__toggle" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+  <!-- SHARED NAV -->
+  <div class="cc-nav-root">
+    <nav class="cc-nav" role="navigation" aria-label="Main navigation">
+      <div class="cc-nav-container">
+        <div class="cc-nav-inner">
+          <a class="cc-nav-brand" href="https://tejasdua143.github.io/valorant-landing-clone/">
+            <img src="https://tejasdua143.github.io/valorant-landing-clone/artemis-logo.jpeg" alt="Artemis" style="width:28px;height:28px;border-radius:8px;object-fit:cover"/>
+            <span class="cc-nav-brand-text">Artemis</span>
+          </a>
+          <div class="cc-nav-links">
+            <a href="https://tejasdua143.github.io/valorant-landing-clone/">Home</a>
+            <a href="https://tejasdua143.github.io/creator-commerce-landing/">Creator Stores</a>
+            <a class="active" href="https://tejasdua143.github.io/artemis-landing/">Discord Bot</a>
+          </div>
+          <div class="cc-nav-right">
+            <button class="cc-nav-cta" onclick="window.location.href='#install'">Get started</button>
+            <button class="cc-nav-toggle" aria-label="Open menu" onclick="document.querySelector('.cc-mobile-menu').classList.add('is-open')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="cc-mobile-menu">
+      <div class="cc-mobile-menu-header">
+        <a class="cc-nav-brand" href="https://tejasdua143.github.io/valorant-landing-clone/"><img src="https://tejasdua143.github.io/valorant-landing-clone/artemis-logo.jpeg" alt="Artemis" style="width:28px;height:28px;border-radius:8px;object-fit:cover;"/><span class="cc-nav-brand-text" style="color:#f0f0f2">Artemis</span></a>
+        <button class="cc-mobile-menu-close" aria-label="Close menu" onclick="document.querySelector('.cc-mobile-menu').classList.remove('is-open')">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="cc-mobile-menu-links">
+        <a href="https://tejasdua143.github.io/valorant-landing-clone/">Home</a>
+        <a href="https://tejasdua143.github.io/creator-commerce-landing/">Creator Stores</a>
+        <a class="active" href="https://tejasdua143.github.io/artemis-landing/">Discord Bot</a>
+      </div>
     </div>
-  </nav>
+  </div>
 
   <!-- ─── HERO ─── -->
   <section class="hero">
@@ -509,15 +529,9 @@
   </footer>
 
   <script>
-    // Mobile nav toggle
-    document.querySelector('.navbar__toggle')?.addEventListener('click', function() {
-      document.querySelector('.navbar__links').classList.toggle('open');
-    });
+    // Mobile nav toggle (handled inline by shared nav)
 
-    // Navbar background on scroll
-    window.addEventListener('scroll', () => {
-      document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 40);
-    });
+    // Navbar background on scroll (shared nav uses its own styling);
 
     // Animate elements on scroll
     const observer = new IntersectionObserver((entries) => {
